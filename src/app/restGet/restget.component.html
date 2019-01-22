@@ -1,0 +1,47 @@
+<div>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Valid REST GET Call" (click)="onRestGetButtonClick()">
+            </td>
+            <td>
+                <label>https://reqres.in/api/users?page=2</label>
+            </td>
+            <td>
+                <input type="button" value="Invalid GET Call" (click)="onInvalidGetButtonClick()">
+            </td>
+            <td>
+                <label>https://reqres.in/api/users?page=23</label>
+            </td>
+            <td>
+                <input type="button" value="Error GET Call" (click)="onWrongGetButtonClick()">
+            </td>
+            <td>
+                <label>https://abcdInvalid.in/api/wrong?data=23</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Check and GET Order" (click)="onClickCheckAll()">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="responseGetJsonData">
+    Page:{{responseGetJsonData.page}} - Per Page:{{responseGetJsonData.per_page}} - Total
+    Page:{{responseGetJsonData.total}}
+    <table border="1 px">
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr *ngFor="let d of responseGetJsonData.data">
+            <td>{{d.id}}</td>
+            <td>{{d.first_name}}</td>
+            <td>{{d.last_name}}</td>
+        </tr>
+    </table>
+    <!-- <pre>{{responseGetJsonData | json }}</pre> -->
+</div>

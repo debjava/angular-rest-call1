@@ -1,0 +1,18 @@
+<div>
+    <h3>All REST DELETE API calls will be displayed</h3>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Delete Info" (click)="onClickDeleteInfoWithHeader()">
+            </td>
+            <td>
+                <label>https://reqres.in/api/users/2</label>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="isValid(responseCode)">
+    <label>Deleted successfully ...</label>
+</div>
+

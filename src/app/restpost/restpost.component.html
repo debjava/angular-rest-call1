@@ -1,0 +1,44 @@
+<div>
+    <h2>{{pageTitle}}</h2>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="Valid POST Rest Call" (click)="onClickValidRestPostData()">
+            </td>
+            <td>
+                <label>https://reqres.in/api/users</label>
+            </td>
+            <td>
+                <input type="button" value="Valid POST Rest Call with Header" (click)="onClickValidRestPostDataWithHeader()">
+            </td>
+            <td>
+                <label>https://reqres.in/api/users</label>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h3>Take input and show data</h3>
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name" [(ngModel)]="nameText">
+            </td>
+            <td>
+                <input type="text" placeholder="Job type" [(ngModel)]="jobText">
+            </td>
+            <td>
+                <input type="button" value="Post details" (click)="onClickPostInputData()">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="jsonDataDisplay">
+    <h3>All response data will be displayed below</h3>
+    <!-- <pre>{{jsonDataDisplay | json }}</pre> -->
+    <table border="1 px">
+        <td>Name: {{jsonDataDisplay.name}}</td>
+        <td>Job Type: {{jsonDataDisplay.job}}</td>
+    </table>
+</div>

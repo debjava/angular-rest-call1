@@ -1,0 +1,32 @@
+<h3>All REST PUT Api Calls</h3>
+<div>
+    <table>
+        <tr>
+            <td>
+                <input type="text" placeholder="Name" [(ngModel)]="nameText">
+            </td>
+            <td>
+                <input type="text" placeholder="Job type" [(ngModel)]="jobText">
+            </td>
+            <td>
+                <input type="button" value="Update Info" (click)="onClickUpdateInfo()">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="jsonDataToDisplay">
+    <!-- <pre>{{jsonDataToDisplay | json }}</pre> -->
+    <h4>Data updated successfuly...</h4>
+    <table border="1 px">
+        <tr>
+            <th>Name</th>
+            <th>Job Type</th>
+        </tr>
+        <tr>
+            <td>{{jsonDataToDisplay.name}}</td>
+            <td>{{jsonDataToDisplay.job}}</td>
+        </tr>
+    </table>
+
+</div>
